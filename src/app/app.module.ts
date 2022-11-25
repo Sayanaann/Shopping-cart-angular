@@ -5,16 +5,34 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ViewproductComponent } from './viewproduct/viewproduct.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const myRoute:Routes=[
+{
+  path:"",
+  component:AddProductComponent
+},
+{
+path:"view",
+component:ViewproductComponent
+}
+
+]
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AddProductComponent,
-    ViewproductComponent
+    ViewproductComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
